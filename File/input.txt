@@ -1,0 +1,10 @@
+    addi $t0, $0, 2       
+    addi $t1, $0, 3       
+    addi $s0, $0, 0       
+    addi $s1, $0, 0 
+    jal  00000              
+    beq  $s0, $t1, 00000                         
+    add  $s1, $s1, $t0    
+    addi $s0, $s0, 1      
+    j 00000               
+    addi $s2, $s1, 0      
