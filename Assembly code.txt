@@ -1,0 +1,22 @@
+#$t0=a,$t1=b,$s0=i,$s1=product,$s2=y
+
+
+main:
+
+    addi $t0,$0,2        #a=2
+    addi $t1,$0,3        #b=3
+    addi $s0,$0,0        #i=0
+    addi $s1,$0,0        #product=0
+    jal  mul             #Go to the mul
+
+mul:
+    beq  $s0,$t1,return #if i==b then Go to the return
+    add  $s1,$s1,$t0    #product=product+a
+    addi $s0,$s0,1      #i=i+1
+    j mul               #Go to the mul
+
+return:
+
+    addi $s2,$s1,0      #y=6
+
+end:
